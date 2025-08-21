@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+
+@font-face {
+    font-family: 'highlandgothic';
+    src: url('/assets/fonts/highlandgothicflf.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'highlandgothicLight';
+    src: url('/assets/fonts/highlandgothiclightflf.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'highlandgothicBold';
+    src: url('/assets/fonts/highlandgothiflf-bold.ttf') format('truetype');
+}
+
+.loading {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+
+.ring {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 0 solid #002c22;
+    position: absolute;
+}
+
+.ring:nth-child(1) {
+    border-bottom-width: 8px;
+    border-color: #ff00ff;
+    animation: rotate1 2s linear infinite;
+}
+
+.ring:nth-child(2) {
+    border-right-width: 8px;
+    border-color: #9d3e87;
+    animation: rotate2 2s linear infinite;
+}
+
+.ring:nth-child(3) {
+    border-top-width: 8px;
+    border-color: yellow;
+    animation: rotate3 2s linear infinite;
+}
+
+@keyframes rotate1 {
+    0% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate2 {
+    0% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate3 {
+    0% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}

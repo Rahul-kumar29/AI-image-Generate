@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link href="/src//style.css" rel="stylesheet"> -->
+</head>
+<body class="">
+    <div class="container ">
+        <header class="header">
+          <div class="logo-wrapper">
+             <div class="container-fluid ps-0.5 pt-6 loading">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <span class=" ps-5">AI</span>
+        </div> 
+            <h1 class="text-4xl text-red-500">AI Image Generator</h1>
+            <button class="theme-toggle rounded-md shadow-lg shadow-blue-500/50 bg-indigo-500 hover:bg-fuchsia-500">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </div>
+        </header>
+
+        <div class="main-content">
+          <form action="#" class="prompt-form">
+            <!-- prompt container -->
+            <div class="prompt-container">
+              <textarea class="prompt-input border-2" placeholder="Describe your imagination in detail..." required autofocus></textarea>
+               <button type="button" class="prompt-button rounded-md shadow-lg shadow-amber-500/50 bg-amber-300 hover:bg-amber-600">
+              <i class="fa-solid fa-dice"></i>
+            </button>
+            </div>
+            <!-- Prompt action buttons -->
+            <div class="prompt-actions">
+              <div class="select-wrapper">
+                <select class="custom-select border" required>
+                  <option value="" selected disabled>Select Model</option>
+                  <option value="black-forest-labs/FLUX.1-dev">FLUX.1-dev</option>
+                  <option value="black-forest-labs/FLUX.1-schnell">FLUX.1-schnell</option>
+                  <option value="stabilityai/stable-diffusion-xl-base-1.0">Stable Diffusion XL</option>
+                  <option value="runwayml/stable-diffusion-v1-5">Stable Diffusion v1.5</option>
+                   <option value="prompthero/openjourney">OpenJourney</option>
+                </select>
+              </div>
+
+              <div class="select-wrapper">
+                <select class="custom-select border" required>
+                  <option value="" selected disabled>Image Count</option>
+                  <option value="1">1 Images</option>
+                  <option value="2">2 Images</option>
+                  <option value="3">3 Images</option>
+                  <option value="4">4 Images</option>
+                </select>
+              </div>
+
+              <div class="select-wrapper">
+                <select class="custom-select border" required>
+                  <option value="" selected disabled>Aspect Ratio</option>
+                  <option value="1/1">Square (1:1)</option>
+                  <option value="16/9">Landscape (16:9)</option>
+                  <option value="9/16">Portrait (9:16)</option>
+                </select>
+              </div>
+              <button type="submit" class="generate-btn rounded-md shadow-lg shadow-green-500/50 bg-green-400 hover:bg-green-600">
+                <i class="fa-solid fa-wand-sparkles"></i>
+                Generate
+              </button>
+            </div>
+          </form>
+        </div>
+    </div>
+</body>
+</html>
