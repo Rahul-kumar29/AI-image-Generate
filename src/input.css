@@ -19,11 +19,8 @@
     src: url('/assets/fonts/highlandgothiflf-bold.ttf') format('truetype');
 }
 
-.loading {
-    position: relative;
-    display: flex;
-    align-items: center;
-    
+*{
+    font-family: 'Highlandgothic';
 }
 
 .ring {
