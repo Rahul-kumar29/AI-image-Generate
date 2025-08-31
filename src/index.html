@@ -9,7 +9,7 @@
 </head>
 <body class="m-0 p-0 box-border flex justify-center items-center h-screen bg-linear-to-b from-zinc-800 to-zinc-400">
     <div class="container w-6xl  border-t-4 border-t-indigo-500 rounded-md shadow-lg shadow-amber-50/40 bg-amber-50 p-5">
-        <header class="header ">
+        <header class="header pb-5">
             <div class=" flex items-center"> 
               <div class=" flex flex-1">
                 <div class="relative flex items-center">
@@ -31,16 +31,16 @@
         <div class="main-content">
           <form action="#" class="prompt-form">
             <!-- prompt container -->
-            <div class="prompt-container">
-              <textarea class="prompt-input border-2" placeholder="Describe your imagination in detail..." required autofocus></textarea>
-               <button type="button" class="prompt-button rounded-md shadow-lg shadow-amber-500/50 bg-amber-300 hover:bg-amber-600">
+            <div class="prompt-container w-full relative mb-5">
+              <textarea class="prompt-input border-2 leading-5 text-base w-full border-sky-50 text-black bg-sky-100 min-h-20 p-5 rounded-xl resize-y transition-all duration-150 ease-in-out outline-sky-400 hover:border-sky-400 shadow-sky-200" placeholder="Describe your imagination in detail..." required></textarea>
+               <button type="button" class="prompt-btn shadow-lg shadow-amber-500/50 bg-amber-300 cursor-pointer opacity-60 ease-in-out duration-150 hover:opacity-100 hover:bg-amber-600 absolute right-5 bottom-5 h-6 w-6 rounded-full">
               <i class="fa-solid fa-dice"></i>
             </button>
             </div>
             <!-- Prompt action buttons -->
-            <div class="prompt-actions">
-              <div class="select-wrapper">
-                <select class="custom-select border" required>
+            <div class="prompt-actions grid grid-cols-4 gap-8">
+              <div class="select-wrapper flex justify-center">
+                <select class="custom-select rounded-md outline-0 min-h-8 w-full bg-sky-100 cursor-pointer" id="model-select" required>
                   <option value="" selected disabled>Select Model</option>
                   <option value="black-forest-labs/FLUX.1-dev">FLUX.1-dev</option>
                   <option value="black-forest-labs/FLUX.1-schnell">FLUX.1-schnell</option>
@@ -50,8 +50,8 @@
                 </select>
               </div>
 
-              <div class="select-wrapper">
-                <select class="custom-select border" required>
+              <div class="select-wrapper flex justify-center">
+                <select class="custom-select rounded-md outline-0 min-h-8 w-full bg-sky-100 cursor-pointer" id="count-select" required>
                   <option value="" selected disabled>Image Count</option>
                   <option value="1">1 Images</option>
                   <option value="2">2 Images</option>
@@ -60,8 +60,8 @@
                 </select>
               </div>
 
-              <div class="select-wrapper">
-                <select class="custom-select border" required>
+              <div class="select-wrapper flex justify-center">
+                <select class="custom-select rounded-md outline-0 min-h-8 w-full bg-sky-100 cursor-pointer" id="ratio-select" required>
                   <option value="" selected disabled>Aspect Ratio</option>
                   <option value="1/1">Square (1:1)</option>
                   <option value="16/9">Landscape (16:9)</option>
@@ -73,8 +73,52 @@
                 Generate
               </button>
             </div>
+            <!-- Result Gallary Grid -->
+            <div class="gallery-grid has-[(.img-card)]:mt-5 grid gap-8 grid-cols-4">
+              <!-- <div class="img-card relative overflow-hidden rounded-md border-sky-100 bg-sky-100 h-64 group hover:translate-y-2">   <!--[not(.loading)]: -->
+                <!-- <div class="status-container ">
+                  <div class="spinner flex flex-col items-center p-5">
+                    <div class="w-8 h-8 rounded-full border-4 border-sky-400 border-t-indigo-600 animate-spin rotate-180"></div>
+                    <p class="status-text text-sky-400">Generating...</p>
+                  </div>
+                </div> -->
+                <!-- <img src="/assests/img/nobg.png" alt="test images" class="result-img  object-cover"> [.loading_&]:hidden -->
+                <!-- <div class="img-overlay absolute bottom-0 right-0 left-0 p-6 justify-end flex pointer-events-none opacity-0 transition-all ease-in duration-100 group-hover:opacity-100 group-hover:pointer-events-auto ">  <!-- [.loading_&]:hidden -->
+                  <!-- <button class="img-download-btn h-8 w-8 text-white backdrop-blur-md rounded-full border-none cursor-pointer">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                </div>
+              </div> -->
+
+
+              <!-- <div class="img-card relative overflow-hidden rounded-md border-sky-100 bg-sky-100 h-64 group hover:translate-y-2">
+                <img src="/assests/img/nobg.png" alt="test images" class="result-img object-cover">
+                <div class="img-overlay absolute bottom-0 right-0 left-0 p-6 justify-end flex pointer-events-none opacity-0 transition-all ease-in duration-100 group-hover:opacity-100 group-hover:pointer-events-auto">
+                  <button class="img-download-btn h-8 w-8 text-white backdrop-blur-md rounded-full border-none cursor-pointer">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="img-card relative overflow-hidden rounded-md border-sky-100 bg-sky-100 h-64 group hover:translate-y-2">
+                <img src="/assests/img/nobg.png" alt="test images" class="result-img  object-cover">
+                <div class="img-overlay absolute bottom-0 right-0 left-0 p-6 justify-end flex pointer-events-none opacity-0 transition-all ease-in duration-100 group-hover:opacity-100 group-hover:pointer-events-auto">
+                  <button class="img-download-btn h-8 w-8 text-white backdrop-blur-md rounded-full border-none cursor-pointer">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="img-card relative overflow-hidden rounded-md border-sky-100 bg-sky-100 h-64 group hover:translate-y-2">
+                <img src="/assests/img/nobg.png" alt="test images" class="result-img  object-cover">
+                <div class="img-overlay absolute bottom-0 right-0 left-0 p-6 justify-end flex pointer-events-none opacity-0 transition-all ease-in duration-100 group-hover:opacity-100 group-hover:pointer-events-auto">
+                  <button class="img-download-btn h-8 w-8 text-white backdrop-blur-md rounded-full border-none cursor-pointer ">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                </div>
+              </div> -->
+            </div>
           </form>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
